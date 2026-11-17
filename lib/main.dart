@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:fitness_universe/l10n/app_localizations.dart';
 import 'workout_store.dart';
+import 'localized_duration.dart';
 
 void main() => runApp(const FitnessUniverseApp());
 
@@ -58,7 +59,7 @@ class _FitnessHomeState extends State<FitnessHome> {
   };
 
   Future<void> _add(AppLocalizations l) async {
-    final parsed = int.tryParse(minutes.text.trim());
+    final parsed = parseWorkoutMinutes(minutes.text);
     if (parsed == null || parsed < 1 || parsed > 1440) {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(l.invalid)));
       return;
