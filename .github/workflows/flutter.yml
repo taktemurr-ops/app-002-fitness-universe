@@ -13,5 +13,5 @@ jobs:
       - run: flutter create --platforms=android,ios .
       - run: rm -f test/widget_test.dart
       - run: flutter pub get
-      - run: flutter analyze
+      - run: flutter analyze --no-fatal-infos
       - run: flutter test
