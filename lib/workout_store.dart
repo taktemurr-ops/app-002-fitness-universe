@@ -49,6 +49,15 @@ class WorkoutStore extends ChangeNotifier {
     await _save();
   }
 
+  /// Deletes the locally stored workout history after explicit user consent.
+  Future<void> clearAll() async {
+    final prefs = await SharedPreferences.getInstance();
+    final removed = await prefs.remove(storageKey);
+    if (!removed) throw StateError('Could not delete locally stored workouts');
+    _workouts.clear();
+    notifyListeners();
+  }
+
   Future<void> _save() async {
     final prefs = await SharedPreferences.getInstance();
     final success = await prefs.setString(storageKey, jsonEncode(_workouts.map((w) => w.toJson()).toList()));
