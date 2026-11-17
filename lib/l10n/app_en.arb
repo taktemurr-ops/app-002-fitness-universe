@@ -1,0 +1,26 @@
+{
+  "@@locale": "en",
+  "appTitle": "Fitness Universe",
+  "heading": "Workout journal",
+  "privacy": "Workouts are stored on this device.",
+  "activity": "Activity",
+  "minutes": "Duration (minutes)",
+  "save": "Save workout",
+  "history": "Workout history",
+  "empty": "No workouts yet",
+  "invalid": "Enter a valid duration (1–1440 minutes).",
+  "walking": "Walking",
+  "running": "Running",
+  "cycling": "Cycling",
+  "strength": "Strength training",
+  "yoga": "Yoga",
+  "delete": "Delete workout",
+  "summary": "Total: {minutes} minutes",
+  "@summary": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  }
+}
